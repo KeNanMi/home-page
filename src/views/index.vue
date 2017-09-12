@@ -109,23 +109,23 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-    *{
-    margin: 0;
-    padding: 0;
-    }
-    body {
-        margin: 0px;
-    }
-    .nav {
-      position: absolute;
-      width: 100%;
-      display: flex;
-      -webkit-flex-flow: row wrap;
-      justify-content: flex-end;
-      background-color: rgba(0, 0, 0, 0);
-      color: #fff;
-      transition: all .4s;
-    }
+  *{
+  margin: 0;
+  padding: 0;
+  }
+  body {
+      margin: 0px;
+  }
+  .nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    transition: all .4s;
+  }
 
   .nav-fixed {
     color: rgba(0, 0, 0, .8);
@@ -294,7 +294,10 @@
     font-weight: 400;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 750px) {
+    .nav {
+        display: none;
+    }
     .header-title h1 {
       font-size: 2.6rem;
     }
@@ -308,8 +311,124 @@
       padding: 1rem 1.4rem;
     }
 
-    .header, .header-background {
+    .header, .header-background, .advantage-background, .loan-background, .about-background {
       height: 24rem;
     }
+
+    .header-background {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .download-btn {
+        position: absolute;
+        margin-top: 43%;
+        width: 14%;
+        height: 10%;
+        margin-left: 57%;
+      }
+    }
+    .advantage-background {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 24rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .loan-background {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 48rem;
+      background-size: cover !important;
+      background: url('../assets/images/loanGuide.png') no-repeat;
+      li {
+        position: absolute;
+      }
+      img {
+          width: 9rem;
+          height: 13rem;
+      }
+      .clearfix {
+          content: '';
+          clear: both;
+          display: block;
+          position: absolute;
+          margin-left: 28%;
+      }
+      
+      .carousel {
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          margin-top: 13%;
+          overflow: hidden;
+          position: relative;
+      }
+      
+      .slide {
+          width: 50%;
+          height: 100%;
+      }
+      .bullet {
+          width: 45%;
+          position: absolute;
+          margin-top: 4%;
+          left: 53%;
+          text-align: center;
+          z-index: 10;
+          height: 50%;
+          font-size: 1rem;
+      }
+      .active {
+          color: #ffca6c;
+      }
+      
+      .image-enter-active {
+          transform: translateX(0);
+          transition: all 1s ease;
+      }
+      
+      .image-leave-active {
+          transform: translateX(-100%);
+          transition: all 1s ease;
+      }
+      
+      .image-enter {
+          transform: translateX(100%)
+      }
+      
+      .image-leave {
+          transform: translateX(0)
+      }
+      span {
+          width: 100%;
+          height: 18%;
+          text-align: left;
+          color: #eff2ff;
+          display: inline-block;
+          margin-top: 2%;
+      }
+    }
+    .about-background {
+      z-index: -1;
+      width: 100%;
+      left: 0;
+      top: 72rem;
+      background-size: cover !important;
+      background: url('../assets/images/about_us.png') no-repeat center;
+    }
+
   }
 </style>
