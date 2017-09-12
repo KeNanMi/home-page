@@ -1,7 +1,9 @@
 <template>
   <div>
     <div id="home" class="header-background"></div>
-    <div id="ad" class="advantage-background"></div>
+    <div id="ad" class="advantage-background">
+      <img src="../assets/images/advantage.png">
+    </div>
     <div id="loan" class="loan-background">
       <div class="carousel">
         <transition-group tag='ul' class="clearfix slide" name='image'>
@@ -168,7 +170,10 @@
     left: 0;
     top: 50rem;
     background-size: cover !important;
-    background: url('../assets/images/advantage.png') no-repeat center;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .loan-background {
     z-index: -1;
