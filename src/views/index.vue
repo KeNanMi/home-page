@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div id="home" class="header-background"></div>
+    <div id="home" class="header-background">
+      <img src="../assets/images/top.png">
+      <div class="download-btn">
+        <img src="../assets/images/down_btn.png">
+      </div>
+    </div>
     <div id="ad" class="advantage-background">
       <img src="../assets/images/advantage.png">
     </div>
@@ -159,8 +164,20 @@
     width: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, .4) url('../assets/images/top.png') no-repeat;
+//    background: rgba(0, 0, 0, .4) url('../assets/images/top.png') no-repeat;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
     background-size: cover;
+    .download-btn {
+      position: absolute;
+      margin-top: 26%;
+      width: 14%;
+      height: 10%;
+      margin-left: 58%;
+    }
   }
   .advantage-background {
     z-index: -1;
@@ -188,20 +205,20 @@
       position: absolute;
     }
     img {
-        width: 700px;
-        height: 1000px;
+        width: 25rem;
+        height: 30rem;
     }
     .clearfix {
         content: '';
         clear: both;
         display: block;
         position: absolute;
-        margin-left: 30%;
+        margin-left: 28%;
     }
     
     .carousel {
         width: 100%;
-        height: 1200px;
+        height: 100%;
         margin: 0 auto;
         margin-top: 13%;
         overflow: hidden;
@@ -209,16 +226,17 @@
     }
     
     .slide {
-        width: 800px;
-        height: 800px;
+        width: 50%;
+        height: 100%;
     }
     .bullet {
         width: 30%;
         position: absolute;
-        margin-top: 70px;
-        left: 50%;
+        margin-top: 4%;
+        left: 53%;
         text-align: center;
         z-index: 10;
+        height: 50%;
     }
     .active {
         color: #ffca6c;
@@ -243,12 +261,11 @@
     }
     span {
         width: 100%;
-        height: 220px;
+        height: 18%;
         text-align: left;
         color: #eff2ff;
         display: inline-block;
-        margin-top: 20px;
-        margin-right: 60px;
+        margin-top: 2%;
     }
   }
   .about-background {
