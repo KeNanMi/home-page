@@ -2,12 +2,13 @@
   <div>
     <div id="home" class="header-background">
       <img src="../assets/images/top.png">
+      <img class="phone" src="../assets/images/phone.png">
       <div class="download-btn">
         <img src="../assets/images/down_btn.png">
       </div>
     </div>
     <div id="ad" class="advantage-background">
-      <img src="../assets/images/advantage.png">
+      <img class="advantage" src="../assets/images/advantage_bg.png">
     </div>
     <div id="loan" class="loan-background">
       <div class="carousel">
@@ -21,7 +22,9 @@
         </div>
     </div>
     </div>
-    <div id="about" class="about-background"></div>
+    <div id="about" class="about-background">
+      <img class="about-bg" src="../assets/images/about_bg.png">
+    </div>
     <ul :class="['nav', { 'nav-fixed': !isTop, 'nav-invisible': !isVisible }]">
       <li>
         <a @click="scroll('home')">Home</a>
@@ -162,9 +165,12 @@
     position: absolute;
     height: 50rem;
     width: 100%;
-    left: 0;
-    top: 0;
-//    background: rgba(0, 0, 0, .4) url('../assets/images/top.png') no-repeat;
+    .phone {
+      margin-top: 7rem;
+      width: 40rem;
+      height: 40rem;
+      left: 20%;
+    }
     img {
       position: absolute;
       width: 100%;
@@ -173,9 +179,9 @@
     background-size: cover;
     .download-btn {
       position: absolute;
-      margin-top: 26%;
-      width: 14%;
-      height: 10%;
+      margin-top: 28rem;
+      width: 16rem;
+      height: 5rem;
       margin-left: 58%;
     }
   }
@@ -183,13 +189,17 @@
     z-index: -1;
     position: absolute;
     height: 50rem;
-    width: 100%;
-    left: 0;
     top: 50rem;
-    background-size: cover !important;
-    img {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    .advantage {
+      width: 55rem;
+      height: 45rem;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      display: block;
+      transform: translate3d(-50%, -50%,0);
     }
   }
   .loan-background {
@@ -213,16 +223,15 @@
         clear: both;
         display: block;
         position: absolute;
-        margin-left: 28%;
+        margin-left: 2%;
     }
-    
     .carousel {
-        width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        margin-top: 13%;
-        overflow: hidden;
-        position: relative;
+        width: 62rem;
+        height: 30rem;
+        left: 50%;
+        top: 60%;
+        transform: translate3d(-50%,-50%,0);
+        position: absolute;
     }
     
     .slide {
@@ -230,7 +239,7 @@
         height: 100%;
     }
     .bullet {
-        width: 30%;
+        width: 30rem;
         position: absolute;
         margin-top: 4%;
         left: 53%;
@@ -248,12 +257,12 @@
     }
     
     .image-leave-active {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
         transition: all 1s ease;
     }
     
     .image-enter {
-        transform: translateX(100%)
+        transform: translateX(50%)
     }
     
     .image-leave {
@@ -265,7 +274,7 @@
         text-align: left;
         color: #eff2ff;
         display: inline-block;
-        margin-top: 2%;
+        margin-top: 3rem;
     }
   }
   .about-background {
@@ -275,8 +284,16 @@
     width: 100%;
     left: 0;
     top: 150rem;
-    background-size: cover !important;
-    background: url('../assets/images/about_us.png') no-repeat center;
+    margin: 0 auto;
+    .about-bg {
+      width: 55rem;
+      height: 45rem;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      display: block;
+      transform: translate3d(-50%, -50%,0);
+    }
   }
 
   .header-title {
@@ -368,15 +385,6 @@
           margin-left: 28%;
       }
       
-      .carousel {
-          width: 100%;
-          height: 100%;
-          margin: 0 auto;
-          margin-top: 13%;
-          overflow: hidden;
-          position: relative;
-      }
-      
       .slide {
           width: 50%;
           height: 100%;
@@ -421,14 +429,5 @@
           margin-top: 2%;
       }
     }
-    .about-background {
-      z-index: -1;
-      width: 100%;
-      left: 0;
-      top: 72rem;
-      background-size: cover !important;
-      background: url('../assets/images/about_us.png') no-repeat center;
-    }
-
   }
 </style>
