@@ -27,6 +27,18 @@
     height:100%;
   }
 
+  @media screen and (min-width:1500px) and (max-width:1920px){ 
+    html{
+      font-size:19px !important;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    html{
+      font-size:18px !important;
+    }
+  }
+
   body {
     -webkit-font-smoothing:antialiased;
     font-size: 1.6rem;
@@ -35,7 +47,6 @@
     font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
     color: #404040;
     line-height: 1.7;
-    height:100%;
   }
 
   #wrapper {

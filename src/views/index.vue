@@ -1,9 +1,8 @@
 <template>
   <div>
     <div id="home" class="header-background">
-      <img src="../assets/images/top.png">
       <img class="phone" src="../assets/images/phone.png">
-      <div class="download-btn">
+      <div class="download-btn" @click="toDown()">
         <img src="../assets/images/down_btn.png">
       </div>
     </div>
@@ -24,6 +23,9 @@
     </div>
     <div id="about" class="about-background">
       <img class="about-bg" src="../assets/images/about_bg.png">
+    </div>
+    <div class="bottom">
+      <img class="bottom-bg" src="../assets/images/copyRight.png">
     </div>
     <ul :class="['nav', { 'nav-fixed': !isTop, 'nav-invisible': !isVisible }]">
       <li>
@@ -56,13 +58,13 @@
         headlineFinal: '',
         mark: 0,
         timer: null,
-        img: ['http://activity-codoon.b0.upaiyun.com/123/upload/loan_one.png',
-            'http://activity-codoon.b0.upaiyun.com/123/upload/loan_two.png',
-            'http://activity-codoon.b0.upaiyun.com/123/upload/loan_three.png',
-            'http://activity-codoon.b0.upaiyun.com/123/upload/loan_four.png'
+        img: ['/static/loan_one.png',
+            '/static/loan_two.png',
+            '/static/loan_three.png',
+            '/static/loan_four.png'
         ],
         list: ['1. Open Google Play and download Cash Lending',
-            '2. Choose loan amount and term',
+            '2. Choose loan amount and payment term',
             '3. Spend 5 minutes to fill in application information',
             '4. Loan disbursement within 5 seconds'
         ],
@@ -107,6 +109,10 @@
       play() {
           setInterval(this.autoPlay, 3000)
       },
+      toDown() {
+        console.log(1);
+        window.open("https://play.google.com/store/apps/details?id=com.unipeso.phone");
+      }
     }
   }
 </script>
@@ -128,6 +134,9 @@
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
     transition: all .4s;
+    a{
+      cursor: pointer;
+    }
   }
 
   .nav-fixed {
@@ -161,6 +170,7 @@
   }
 
   .header-background {
+    background: url("../assets/images/top.png") top center no-repeat;
     z-index: -1;
     position: absolute;
     height: 50rem;
@@ -169,7 +179,7 @@
       margin-top: 7rem;
       width: 40rem;
       height: 40rem;
-      left: 20%;
+      left: 17%;
     }
     img {
       position: absolute;
@@ -179,10 +189,11 @@
     background-size: cover;
     .download-btn {
       position: absolute;
-      margin-top: 28rem;
+      margin-top: 33rem;
       width: 16rem;
       height: 5rem;
       margin-left: 58%;
+      cursor: pointer;
     }
   }
   .advantage-background {
@@ -229,7 +240,7 @@
         width: 62rem;
         height: 30rem;
         left: 50%;
-        top: 60%;
+        top: 50%;
         transform: translate3d(-50%,-50%,0);
         position: absolute;
     }
@@ -296,6 +307,26 @@
     }
   }
 
+  .bottom{
+    z-index: -1;
+    position: absolute;
+    height: 5rem;
+    width: 100%;
+    left: 0;
+    top: 200rem;
+    margin: 0 auto;
+    background-color: #333333;
+    .bottom-bg {
+      width: 30rem;
+      height: 3rem;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      display: block;
+      transform: translate3d(-50%, -50%,0);
+    }
+  }
+
   .header-title {
     color: #fff;
     display: flex;
@@ -314,6 +345,9 @@
   @media screen and (max-width: 750px) {
     .nav {
         display: none;
+    }
+    html{
+      font-size:18px;
     }
     .header-title h1 {
       font-size: 2.6rem;
